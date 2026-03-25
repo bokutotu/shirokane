@@ -2,9 +2,4 @@ dist-newstyle/
 .direnv/
 result
 .ghc.environment.*
-.DS_Store
-
-
-# Added by cargo
-
-/target
+shirokane.cabal

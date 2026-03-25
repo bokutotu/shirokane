@@ -1,5 +1,0 @@
-id : (A : Type) -> A -> A
-id = \(A : Type) -> \(x : A) -> x
-
-typeId : Type -> Type
-typeId = id Type

@@ -1,0 +1,15 @@
+name: shirokane
+version: 0.1.0.0
+license: BSD-3-Clause
+extra-source-files:
+  - README.md
+
+executables:
+  shirokane:
+    main: Main.hs
+    source-dirs: app
+    language: Haskell2010
+    ghc-options:
+      - -Wall
+    dependencies:
+      - base >= 4.21 && < 4.22
