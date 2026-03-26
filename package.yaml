@@ -8,8 +8,16 @@ executables:
   shirokane:
     main: Main.hs
     source-dirs: app
-    language: Haskell2010
+    language: GHC2024
     ghc-options:
       - -Wall
     dependencies:
-      - base >= 4.21 && < 4.22
+      - base >= 4
+
+library:
+  source-dirs: src
+  language: GHC2024
+  ghc-options:
+    - Wall
+  dependencies:
+    - base >= 4

@@ -11,6 +11,21 @@ build-type:     Simple
 extra-source-files:
     README.md
 
+library
+  exposed-modules:
+      Core
+      Surface
+  other-modules:
+      Paths_shirokane
+  autogen-modules:
+      Paths_shirokane
+  hs-source-dirs:
+      src
+  ghc-options: Wall
+  build-depends:
+      base >=4
+  default-language: GHC2024
+
 executable shirokane
   main-is: Main.hs
   other-modules:
@@ -21,5 +36,5 @@ executable shirokane
       app
   ghc-options: -Wall
   build-depends:
-      base ==4.21.*
-  default-language: Haskell2010
+      base >=4
+  default-language: GHC2024

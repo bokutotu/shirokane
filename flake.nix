@@ -44,12 +44,23 @@
           compiler-nix-name = "ghc9123";
         };
 
+        shellTools = {
+          haskell-language-server = {};
+          cabal                  = {};
+          hlint                  = {};
+          stylish-haskell        = {};
+          fast-tags              = {};
+          fourmolu               = {};
+          hspec-discover         = {};
+          hpack                  = {};
+          apply-refact           = {};
+        };
+
         exe = project.hsPkgs.shirokane.components.exes.shirokane;
       in {
         devShells.default = project.shellFor {
+          tools = shellTools;
           buildInputs = [
-            pkgs.cabal-install
-            pkgs.haskellPackages.hpack
             pkgs.git
             pkgs.nixpkgs-fmt
           ];
