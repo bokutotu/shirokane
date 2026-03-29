@@ -3,7 +3,8 @@
 module DependentType.Typing where
 
 import           DependentType.Core (Term (..))
-import           DependentType.Eval (Env, Value (..), appendEnv, emptyEnv, eval, quote)
+import           DependentType.Eval (Env, Value (..), appendEnv, emptyEnv, eval,
+                                     quote)
 
 data Ctx = Ctx
     { env   :: Env
@@ -15,7 +16,7 @@ emptyCtx :: Ctx
 emptyCtx = Ctx emptyEnv [] 0
 
 bind :: Value -> Ctx -> Ctx
-bind ty (Ctx env types depth) = Ctx (appendEnv ty env) (types ++ [ty]) (depth + 1)
+bind ty (Ctx env types depth) = Ctx (appendEnv ty env) (ty : types) (depth + 1)
 
 conv :: Int -> Value -> Value -> Bool
 conv n a b = quote n a == quote n b
