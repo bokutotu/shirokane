@@ -1,5 +1,5 @@
 {
-  description = "shirokane - A blank Haskell project";
+  description = "shirokane";
 
   nixConfig = {
     extra-substituters = [

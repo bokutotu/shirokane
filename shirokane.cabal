@@ -13,9 +13,12 @@ extra-source-files:
 
 library
   exposed-modules:
-      Core
-      Elaboration
-      Surface
+      DependentType.Core
+      DependentType.Elaboration
+      DependentType.Eval
+      DependentType.Surface
+      DependentType.Typing
+      TypeCheck
   other-modules:
       Paths_shirokane
   autogen-modules:

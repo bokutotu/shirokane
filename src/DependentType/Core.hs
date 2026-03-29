@@ -1,4 +1,4 @@
-module Core where
+module DependentType.Core where
 
 data Term
     = Type
@@ -6,4 +6,5 @@ data Term
     | Pi String Term Term
     | Lam String Term Term
     | App Term Term
+    | Ann Term Term
     deriving (Show, Eq)
