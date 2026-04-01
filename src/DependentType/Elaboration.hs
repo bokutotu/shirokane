@@ -12,6 +12,11 @@ elaborate ctx (SVar name) = case lookup name ctx of
 elaborate ctx (SLam name ty body) = Lam name (elaborate ctx ty) (elaborate (name : ctx) body)
 elaborate ctx (SApp f x) = App (elaborate ctx f) (elaborate ctx x)
 elaborate ctx (SAnn t ty) = Ann (elaborate ctx t) (elaborate ctx ty)
+elaborate ctx (SPi name ty body) = Pi name (elaborate ctx ty) (elaborate (name : ctx) body)
+elaborate ctx (SSigma name ty body) = Sigma name (elaborate ctx ty) (elaborate (name : ctx) body)
+elaborate ctx (SPair a b) = Pair (elaborate ctx a) (elaborate ctx b)
+elaborate ctx (SFst p) = Fst (elaborate ctx p)
+elaborate ctx (SSnd p) = Snd (elaborate ctx p)
 
 lookup :: String -> [String] -> Maybe Int
 lookup name = go 0
