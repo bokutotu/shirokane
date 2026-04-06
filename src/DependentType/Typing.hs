@@ -53,7 +53,7 @@ infer ctx (Fst p) = do
 infer ctx (Snd p) = do
     pTy <- infer ctx p
     case pTy of
-        VSigma _ _ b -> Right $ b (VFst (eval ctx.env p))
+        VSigma _ _ b -> Right $ b (eval ctx.env (Fst p))
         _            -> Left "Expected a pair type"
 infer _ Pair{} = Left "Cannot infer type of pair without annotation"
 
